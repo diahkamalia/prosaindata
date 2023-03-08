@@ -466,37 +466,44 @@ document.write(`
 <ul class="simple">
 <li><p>Setelah berhasil, tambahkan script berikut</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  import os
-  import urllib.parse as up
-  import psycopg2
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">os</span>
+  <span class="kn">import</span> <span class="nn">urllib.parse</span> <span class="k">as</span> <span class="nn">up</span>
+  <span class="kn">import</span> <span class="nn">psycopg2</span>
 
-  #create connection
-  up.uses_netloc.append(&quot;postgres&quot;)
-  url = up.urlparse(&quot;postgres://ocoydxsj:C5ef4SnRwM0uqUhmfsy0kE5_D0eUqMm0@castor.db.elephantsql.com/ocoydxsj&quot;)
-  conn = psycopg2.connect(database=url.path[1:], user=url.username, password=url.password, host=url.hostname, port=url.port)
-  ```
-    * Note : URL didapatkan dari instance di ElephantSQL yang sudah dibuat sebelumnya
-- Setelah itu, tuliskan script berikut
+  <span class="c1">#create connection</span>
+  <span class="n">up</span><span class="o">.</span><span class="n">uses_netloc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;postgres&quot;</span><span class="p">)</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="n">up</span><span class="o">.</span><span class="n">urlparse</span><span class="p">(</span><span class="s2">&quot;postgres://ocoydxsj:C5ef4SnRwM0uqUhmfsy0kE5_D0eUqMm0@castor.db.elephantsql.com/ocoydxsj&quot;</span><span class="p">)</span>
+  <span class="n">conn</span> <span class="o">=</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">path</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">user</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">url</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>import sqlalchemy as db
-from sqlalchemy import create_engine
-#get table from ElephantSQL
-engine = db.create_engine(“postgresql+psycopg2://ocoydxsj:C5ef4SnRwM0uqUhmfsy0kE5_D0eUqMm0&#64;castor.db.elephantsql.com/ocoydxsj”)
-connection = engine.connect()
-metadata = db.MetaData()
-iris_data = db.Table(‘datairis’, metadata, autoload=True, autoload_with=engine)
-elephantsql_db = db.Table(‘datairis’, metadata, autoload=True, autoload_with=engine)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">Note</span> <span class="p">:</span> <span class="s1">&#39;datairis&#39;</span> <span class="n">merupakan</span> <span class="n">table</span> <span class="n">yang</span> <span class="n">sudah</span> <span class="n">dibuat</span> <span class="n">di</span> <span class="n">ElephantSQL</span>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* Note : URL didapatkan dari instance di ElephantSQL yang sudah dibuat sebelumnya 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Setelah itu, tuliskan script berikut</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="kn">import</span> <span class="nn">sqlalchemy</span> <span class="k">as</span> <span class="nn">db</span>
+  <span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+  
+  <span class="c1">#get table from ElephantSQL</span>
+  <span class="n">engine</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span><span class="s2">&quot;postgresql+psycopg2://ocoydxsj:C5ef4SnRwM0uqUhmfsy0kE5_D0eUqMm0@castor.db.elephantsql.com/ocoydxsj&quot;</span><span class="p">)</span>
+  <span class="n">connection</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+  <span class="n">metadata</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">MetaData</span><span class="p">()</span>
+  <span class="n">iris_data</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;datairis&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+  <span class="n">elephantsql_db</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Table</span><span class="p">(</span><span class="s1">&#39;datairis&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">autoload</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">autoload_with</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="o">-</span> <span class="n">Note</span> <span class="p">:</span> <span class="s1">&#39;datairis&#39;</span> <span class="n">merupakan</span> <span class="n">table</span> <span class="n">yang</span> <span class="n">sudah</span> <span class="n">dibuat</span> <span class="n">di</span> <span class="n">ElephantSQL</span>
 <span class="o">-</span> <span class="n">Setelah</span> <span class="n">itu</span><span class="p">,</span> <span class="n">summon</span> <span class="n">tabel</span> <span class="n">yang</span> <span class="n">ingin</span> <span class="n">ditampilkan</span> <span class="n">di</span> <span class="n">kernel</span> <span class="n">menggunakan</span> <span class="n">script</span> <span class="n">berikut</span>
 </pre></div>
 </div>
-<p>query = db.select([elephantsql_db.columns.id, elephantsql_db.columns.sepalwidth])
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>query = db.select([elephantsql_db.columns.id, elephantsql_db.columns.sepalwidth])
 results = connection.execute(query).fetchall()
 df = pd.DataFrame(results)
 df.columns = results[0].keys()
-df.head(15)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="o">*</span> <span class="n">Note</span> <span class="p">:</span> <span class="n">Menampilkan</span> <span class="o">**</span><span class="n">Sepal</span> <span class="n">Width</span><span class="o">**</span> <span class="n">dari</span> <span class="n">Data</span> <span class="n">Iris</span> <span class="n">di</span> <span class="n">ElephantSQL</span>
+df.head(15)
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">Note</span> <span class="p">:</span> <span class="n">Menampilkan</span> <span class="o">**</span><span class="n">Sepal</span> <span class="n">Width</span><span class="o">**</span> <span class="n">dari</span> <span class="n">Data</span> <span class="n">Iris</span> <span class="n">di</span> <span class="n">ElephantSQL</span>
 <span class="o">-</span> <span class="n">Setelah</span> <span class="n">query</span> <span class="n">berhasil</span><span class="p">,</span> <span class="n">maka</span> <span class="n">kernel</span> <span class="n">menampilkan</span> <span class="o">**</span><span class="n">sepalwidth</span><span class="o">**</span> <span class="n">dari</span> <span class="o">**</span><span class="n">datairis</span><span class="o">**</span> <span class="n">sebanyak</span> <span class="mi">15</span> <span class="n">baris</span><span class="o">.</span>
 </pre></div>
 </div>
