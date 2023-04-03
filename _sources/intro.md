@@ -1,10 +1,11 @@
-# Diah Kamalia - 200411100061 🙌
-# **Proyek Sains Data**
+# Welcome to your Jupyter Book
 
-Sains Data merupakan multidisipliner ilmu yang terdiri dari matematika, statistika dan ilmu komputer. Beberapa sumber lainnya mengatakan juga bahwa artificial intellegence dan quantum juga bagian dari sains data. Tugas dari seorang data scientist adalah mengekstrak data dari sumber data seperti big data atau platform data untuk menghasilkan informasi atau insight dari pola yang terbentuk pada data, mengapa terbentuk, menggunakan metode apa dan apa yang harus dilakukan pada produk hasil akhirnya. 
+This is a small sample book to give you a feel for how book content is
+structured.
+It shows off a few of the major file types, as well as some sample content.
+It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
 
-# **Peran Sains Data**
-- Descriptive Analysis
-- Diagnostic Analysis
-- Predictive Analysis
-- Prescriptive Analysis
+Check out the content pages bundled with this sample book to see more.
+
+```{tableofcontents}
+```
