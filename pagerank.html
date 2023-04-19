@@ -456,7 +456,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2bbfb9ee2a1a1c78a53fd6a1b203ebb53e75d828d67f6e789b65f64309662721.png" src="_images/2bbfb9ee2a1a1c78a53fd6a1b203ebb53e75d828d67f6e789b65f64309662721.png" />
+<img alt="_images/32af15a5e1d182f98f5e5b20643f575d2c01f09828eefe40c2f55b0367b2042f.png" src="_images/32af15a5e1d182f98f5e5b20643f575d2c01f09828eefe40c2f55b0367b2042f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -477,7 +477,7 @@ Number of edges :  12
 <blockquote>
 <div><p>Rumus Pagerank</p>
 </div></blockquote>
-<h1> $P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}$ <h1>
+<h1> $P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}$
 <p>Keterangan :</p>
 <ul class="simple">
 <li><p>in(pi) = Node Pj yang terhubung kepada node Pi</p></li>
@@ -511,7 +511,7 @@ Number of edges :  12
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-370e48c4-45c0-4f67-b31f-e30ca6028182">
+  <div id="df-e53e1333-5c45-4e4e-b5e9-09fb06c6073c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -799,7 +799,7 @@ Number of edges :  12
 </table>
 <p>10 rows × 102 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-370e48c4-45c0-4f67-b31f-e30ca6028182')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e53e1333-5c45-4e4e-b5e9-09fb06c6073c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -850,12 +850,12 @@ Number of edges :  12
 
       <script>
         const buttonEl =
-          document.querySelector('#df-370e48c4-45c0-4f67-b31f-e30ca6028182 button.colab-df-convert');
+          document.querySelector('#df-e53e1333-5c45-4e4e-b5e9-09fb06c6073c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-370e48c4-45c0-4f67-b31f-e30ca6028182');
+          const element = document.querySelector('#df-e53e1333-5c45-4e4e-b5e9-09fb06c6073c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -934,12 +934,39 @@ Number of edges :  12
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: PyPDF2 in /usr/local/lib/python3.9/dist-packages (3.0.1)
-Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
+  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━ <span class=" -Color -Color-Green">225.3/232.6 kB</span> <span class=" -Color -Color-Red">8.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">5.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-Requirement already satisfied: docx2txt in /usr/local/lib/python3.9/dist-packages (0.8)
+Collecting docx2txt
+  Downloading docx2txt-0.8.tar.gz (2.8 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+Building wheels for collected packages: docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
+  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3977 sha256=a1dbcd33c089b63b9acbfedeb7965cfd6a25afc23b12f7b39343eff45236e869
+  Stored in directory: /root/.cache/pip/wheels/40/75/01/e6c444034338bde9c7947d3467807f889123465c2371e77418
+Successfully built docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: docx2txt
+Successfully installed docx2txt-0.8
 </pre></div>
 </div>
 </div>
