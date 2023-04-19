@@ -60,8 +60,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pagerank';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -390,7 +388,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right"><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual-pagerank">Hitung Manual Pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-pagerank">Hitung Pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a><ul class="nav section-nav flex-column">
@@ -459,7 +456,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a0dd86b472740c389da8c452f298690cacf87fb002e17ee05619e5d11e45c8d1.png" src="_images/a0dd86b472740c389da8c452f298690cacf87fb002e17ee05619e5d11e45c8d1.png" />
+<img alt="_images/2bbfb9ee2a1a1c78a53fd6a1b203ebb53e75d828d67f6e789b65f64309662721.png" src="_images/2bbfb9ee2a1a1c78a53fd6a1b203ebb53e75d828d67f6e789b65f64309662721.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -480,9 +477,7 @@ Number of edges :  12
 <blockquote>
 <div><p>Rumus Pagerank</p>
 </div></blockquote>
-</div>
-<div class="section" id="p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right">
-<h2><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span><a class="headerlink" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right" title="Permalink to this heading">#</a></h2>
+<h1> $P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}$ <h1>
 <p>Keterangan :</p>
 <ul class="simple">
 <li><p>in(pi) = Node Pj yang terhubung kepada node Pi</p></li>
@@ -516,7 +511,7 @@ Number of edges :  12
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-b48255e1-ae73-40fe-9b69-55059b71c304">
+  <div id="df-370e48c4-45c0-4f67-b31f-e30ca6028182">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -804,7 +799,7 @@ Number of edges :  12
 </table>
 <p>10 rows × 102 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b48255e1-ae73-40fe-9b69-55059b71c304')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-370e48c4-45c0-4f67-b31f-e30ca6028182')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -855,12 +850,12 @@ Number of edges :  12
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b48255e1-ae73-40fe-9b69-55059b71c304 button.colab-df-convert');
+          document.querySelector('#df-370e48c4-45c0-4f67-b31f-e30ca6028182 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b48255e1-ae73-40fe-9b69-55059b71c304');
+          const element = document.querySelector('#df-370e48c4-45c0-4f67-b31f-e30ca6028182');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -939,42 +934,12 @@ Number of edges :  12
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
-  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">8.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
+Requirement already satisfied: PyPDF2 in /usr/local/lib/python3.9/dist-packages (3.0.1)
+Requirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docx2txt
-  Downloading docx2txt-0.8.tar.gz (2.8 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
-Building wheels for collected packages: docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
-  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3977 sha256=c0de25175394aab425c468ccaacfdf522e30a1a0b0cccd380b255e913349d885
-  Stored in directory: /root/.cache/pip/wheels/40/75/01/e6c444034338bde9c7947d3467807f889123465c2371e77418
-Successfully built docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: docx2txt
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed docx2txt-0.8
+Requirement already satisfied: docx2txt in /usr/local/lib/python3.9/dist-packages (0.8)
 </pre></div>
 </div>
 </div>
@@ -1618,7 +1583,6 @@ The gunfight took place last night in Kistaram police station area when a team o
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right"><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual-pagerank">Hitung Manual Pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-pagerank">Hitung Pagerank</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a><ul class="nav section-nav flex-column">
