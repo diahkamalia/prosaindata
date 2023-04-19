@@ -1,0 +1,1688 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagerank &#8212; Diah Kamalia 200411100061</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pagerank';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Text Classification - UTS" href="UTS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Diah Kamalia - 200411100061 🙌
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tugas Proyek Sains Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ScrapeTwitter.html">Scrape Twitter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ScrapePTA.html">Scrape PTA Trunojoyo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ScrapeBeritaOnline.html">Scrape Berita Online</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Orchest Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries.html">Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UTS.html">Text Classification - UTS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pagerank</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/diahkamalia/prosaindata/blob/gh-pages/_sources/pagerank.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/diahkamalia/prosaindata" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/diahkamalia/prosaindata/issues/new?title=Issue%20on%20page%20%2Fpagerank.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pagerank.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pagerank</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right"><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual-pagerank">Hitung Manual Pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-pagerank">Hitung Pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-document-type">Define Document Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-sentence">Split Sentence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-document">Read Document</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-sentence">Print Sentence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix-td-matrix">Generate Term-Document Matrix (TD Matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-rank">Determine Rank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-important-sentences-and-generate-summary">Find Important Sentences and Generate Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-summary">Write the Summary</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="pagerank">
+<h1>Pagerank<a class="headerlink" href="#pagerank" title="Permalink to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">PageRank</span> <span class="pre">adalah</span> <span class="pre">algoritma</span> <span class="pre">yang</span> <span class="pre">dibuat</span> <span class="pre">oleh</span> <span class="pre">Larry</span> <span class="pre">Page.</span> <span class="pre">Pagerank</span> <span class="pre">merupakan</span> <span class="pre">algoritma</span> <span class="pre">yang</span> <span class="pre">digunakan</span> <span class="pre">dalam</span> <span class="pre">analisis</span> <span class="pre">jaringan</span> <span class="pre">dan</span> <span class="pre">pengurutan</span> <span class="pre">halaman</span> <span class="pre">web.</span> <span class="pre">Algoritma</span> <span class="pre">Pagerank</span> <span class="pre">mengukur</span> <span class="pre">kepentingan</span> <span class="pre">relatif</span> <span class="pre">dari</span> <span class="pre">setiap</span> <span class="pre">halaman</span> <span class="pre">web</span> <span class="pre">dalam</span> <span class="pre">suatu</span> <span class="pre">jaringan</span> <span class="pre">dengan</span> <span class="pre">menganalisis</span> <span class="pre">jumlah</span> <span class="pre">dan</span> <span class="pre">kualitas</span> <span class="pre">tautan</span> <span class="pre">masuk</span> <span class="pre">ke</span> <span class="pre">halaman</span> <span class="pre">tersebut</span> <span class="pre">dari</span> <span class="pre">halaman</span> <span class="pre">web</span> <span class="pre">lain</span> <span class="pre">dalam</span> <span class="pre">jaringan.</span> <span class="pre">Algoritma</span> <span class="pre">ini</span> <span class="pre">digunakan</span> <span class="pre">oleh</span> <span class="pre">mesin</span> <span class="pre">pencarian</span> <span class="pre">Google</span> <span class="pre">yang</span> <span class="pre">memberikan</span> <span class="pre">bobot</span> <span class="pre">numerik</span> <span class="pre">untuk</span> <span class="pre">setiap</span> <span class="pre">elemen</span> <span class="pre">dari</span> <span class="pre">kumpulan</span> <span class="pre">dokumen</span> <span class="pre">hyperlink</span> <span class="pre">seperti</span> <span class="pre">Word</span> <span class="pre">Wide</span> <span class="pre">Web</span> <span class="pre">dengan</span> <span class="pre">tujuan</span> <span class="pre">untuk</span> <span class="pre">mengukur</span> <span class="pre">hubungan</span> <span class="pre">kepentingan</span> <span class="pre">dalam</span> <span class="pre">kumpulan</span> <span class="pre">dokumen</span> <span class="pre">tersebut.</span></code></p>
+<blockquote>
+<div><p>Tugas Pagerank :</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Buat graph berarah dengan networkx (minimal 9 node )</p>
+<ul>
+<li><p>Hitung manual pagerank dari graph yang anda buat</p></li>
+<li><p>Hitung menggunakan pagerank menggunakan networkx</p></li>
+</ul>
+</li>
+<li><p>Implementasikan ulang <a class="reference external" href="https://github.com/Shakunni/Extractive-Text-Summarization/blob/master/extractive_summarizer.ipynb">Shakunni/Extractive-Text-Summarization</a></p></li>
+<li><p>Upload di github repository webstatis masing masing</p></li>
+<li><p>Beri penjelasan terkait dengan proses</p></li>
+</ul>
+<div class="section" id="graph">
+<h2>Graph<a class="headerlink" href="#graph" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Membuat Graph berarah menggunakan networkx (minimal 9 node)</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+<span class="c1"># menambahkan node</span>
+<span class="n">G</span><span class="o">.</span><span class="n">add_edges_from</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">),(</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">),(</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">),(</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">),(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">),(</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">)])</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">node_color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#menampilkan graf</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Graf Berarah dengan NetworkX&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a0dd86b472740c389da8c452f298690cacf87fb002e17ee05619e5d11e45c8d1.png" src="_images/a0dd86b472740c389da8c452f298690cacf87fb002e17ee05619e5d11e45c8d1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengetahui jumlah node dan edge</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of nodes : &#39;</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of edges : &#39;</span><span class="p">,</span> <span class="n">G</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of nodes :  9
+Number of edges :  12
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Rumus Pagerank</p>
+</div></blockquote>
+</div>
+<div class="section" id="p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right">
+<h2><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span><a class="headerlink" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right" title="Permalink to this heading">#</a></h2>
+<p>Keterangan :</p>
+<ul class="simple">
+<li><p>in(pi) = Node Pj yang terhubung kepada node Pi</p></li>
+<li><p>out(pj) = adalah jumlah line yang keluar dari node Pj</p></li>
+<li><p>d = Nilai Damping Factor dengan hasil 0,85</p></li>
+<li><p>N = Banyaknya Node</p></li>
+</ul>
+<p>Langkah - langkah menentukan Pagerank :</p>
+<ul class="simple">
+<li><p>Iterasi pertama diawali dengan membagi node dengan jumlah dari keseluruhan node</p></li>
+<li><p>Menentukan iterasi berikutnya dengan melakukan perhitungan sesuai dengan rumus yaitu melakukan perhitungan (1-damping factor)/(banyaknya nodes).kemudian ditambah dengan damping factor * (jumlahkan setiap nodes Pj, dimana Pj terhubung dengan nodes Pi/jumlah line yang keluar dari nodes Pj)</p></li>
+<li><p>Melakukan iterasi sampai jumlah nilai dari iterasi tidak bernilai 1 atau sampai iterasi tertentu yang sudah ditentukan</p></li>
+</ul>
+</div>
+<div class="section" id="hitung-manual-pagerank">
+<h2>Hitung Manual Pagerank<a class="headerlink" href="#hitung-manual-pagerank" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Lakukan perhitungan manual pagerank dari graph yang dibuat</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">cd</span> /content/drive/MyDrive/Prosaindata/tugas
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;manual.csv&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/Prosaindata/tugas
+</pre></div>
+</div>
+<div class="output text_html">
+  <div id="df-b48255e1-ae73-40fe-9b69-55059b71c304">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Node</th>
+      <th>ITERASI 0</th>
+      <th>ITERASI 1</th>
+      <th>ITERASI 2</th>
+      <th>ITERASI 3</th>
+      <th>ITERASI 4</th>
+      <th>ITERASI 5</th>
+      <th>ITERASI 6</th>
+      <th>ITERASI 7</th>
+      <th>ITERASI 8</th>
+      <th>...</th>
+      <th>ITERASI 91</th>
+      <th>ITERASI 92</th>
+      <th>ITERASI 93</th>
+      <th>ITERASI 94</th>
+      <th>ITERASI 95</th>
+      <th>ITERASI 96</th>
+      <th>ITERASI 97</th>
+      <th>ITERASI 98</th>
+      <th>ITERASI 99</th>
+      <th>ITERASI 100</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,1452291667</td>
+      <td>0,1742295139</td>
+      <td>0,1680669401</td>
+      <td>0,1418760015</td>
+      <td>0,1329710824</td>
+      <td>0,136755673</td>
+      <td>...</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+      <td>0,1452968102</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,1401114583</td>
+      <td>0,1647617535</td>
+      <td>0,1595235658</td>
+      <td>0,137261268</td>
+      <td>0,1296920867</td>
+      <td>...</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+      <td>0,1401689553</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>0,1111111111</td>
+      <td>0,06388888889</td>
+      <td>0,06388888889</td>
+      <td>0,06388888889</td>
+      <td>0,06388888889</td>
+      <td>0,07621403646</td>
+      <td>0,08669041189</td>
+      <td>0,08446418211</td>
+      <td>0,07500270555</td>
+      <td>...</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+      <td>0,07623847267</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>0,1111111111</td>
+      <td>0,06388888889</td>
+      <td>0,04381944444</td>
+      <td>0,04381944444</td>
+      <td>0,04381944444</td>
+      <td>0,04381944444</td>
+      <td>0,04905763216</td>
+      <td>0,05351009172</td>
+      <td>0,05256394406</td>
+      <td>...</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+      <td>0,04906801755</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,09104166667</td>
+      <td>0,09104166667</td>
+      <td>0,09104166667</td>
+      <td>0,1033668142</td>
+      <td>0,1190813774</td>
+      <td>0,1213076072</td>
+      <td>0,1108999829</td>
+      <td>...</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+      <td>0,1086398236</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,15125</td>
+      <td>0,1853680556</td>
+      <td>0,1781179688</td>
+      <td>0,1473050998</td>
+      <td>0,1368287244</td>
+      <td>0,141281184</td>
+      <td>0,1507426605</td>
+      <td>...</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+      <td>0,1513295806</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>0,1111111111</td>
+      <td>0,1583333333</td>
+      <td>0,1984722222</td>
+      <td>0,1899427083</td>
+      <td>0,1536922743</td>
+      <td>0,1413671267</td>
+      <td>0,1466053145</td>
+      <td>0,1577364634</td>
+      <td>0,1643594969</td>
+      <td>...</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+      <td>0,1584269576</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>0,1111111111</td>
+      <td>0,1583333333</td>
+      <td>0,1583333333</td>
+      <td>0,1156857639</td>
+      <td>0,1011855903</td>
+      <td>0,1011855903</td>
+      <td>0,106423778</td>
+      <td>0,1131024673</td>
+      <td>0,1178332056</td>
+      <td>...</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+      <td>0,112456901</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>0,1111111111</td>
+      <td>0,1111111111</td>
+      <td>0,07097222222</td>
+      <td>0,05391319444</td>
+      <td>0,05391319444</td>
+      <td>0,05391319444</td>
+      <td>0,05391319444</td>
+      <td>0,058365654</td>
+      <td>0,06215024463</td>
+      <td>...</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+      <td>0,05837448159</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Jumlah</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>...</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 102 columns</p>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b48255e1-ae73-40fe-9b69-55059b71c304')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-b48255e1-ae73-40fe-9b69-55059b71c304 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-b48255e1-ae73-40fe-9b69-55059b71c304');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  </div></div>
+</div>
+</div>
+<div class="section" id="hitung-pagerank">
+<h2>Hitung Pagerank<a class="headerlink" href="#hitung-pagerank" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Lakukan perhitungan pagerank menggunakan Networkx</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagerank</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="c1"># Menampilkan hasil pagerank</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil Pagerank:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pagerank</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">pagerank</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil Pagerank:
+1 0.14529529357644713
+2 0.1401676892095394
+3 0.076238634951147
+4 0.0490685200577753
+9 0.0583749908496336
+8 0.11245770188329454
+7 0.15842763902749055
+6 0.15132904210241682
+5 0.10864048834225562
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">pagerank</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 6, 1, 2, 8, 5, 3, 9, 4]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="text-summarization">
+<h2>Text Summarization<a class="headerlink" href="#text-summarization" title="Permalink to this heading">#</a></h2>
+<blockquote>
+<div><p>Text Summarization adalah tentang menemukan kalimat yang lebih penting dari suatu dokumen sebagai ringkasan dari dokumen itu.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>PyPDF2
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>docx2txt
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting PyPDF2
+  Downloading pypdf2-3.0.1-py3-none-any.whl (232 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/232.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">232.6/232.6 kB</span> <span class=" -Color -Color-Red">8.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: typing_extensions&gt;=3.10.0.0 in /usr/local/lib/python3.9/dist-packages (from PyPDF2) (4.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: PyPDF2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed PyPDF2-3.0.1
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting docx2txt
+  Downloading docx2txt-0.8.tar.gz (2.8 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l?25hdone
+Building wheels for collected packages: docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Building wheel for docx2txt (setup.py) ... ?25l?25hdone
+  Created wheel for docx2txt: filename=docx2txt-0.8-py3-none-any.whl size=3977 sha256=c0de25175394aab425c468ccaacfdf522e30a1a0b0cccd380b255e913349d885
+  Stored in directory: /root/.cache/pip/wheels/40/75/01/e6c444034338bde9c7947d3467807f889123465c2371e77418
+Successfully built docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: docx2txt
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully installed docx2txt-0.8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">PyPDF2</span>
+<span class="kn">import</span> <span class="nn">docx2txt</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline 
+<span class="kn">from</span> <span class="nn">nltk.tokenize.punkt</span> <span class="kn">import</span> <span class="n">PunktSentenceTokenizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfTransformer</span><span class="p">,</span> <span class="n">CountVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="define-document-type">
+<h3>Define Document Type<a class="headerlink" href="#define-document-type" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Menentukan tipe atau format dokumen yang akan dibaca.txt ; .pdf ; atau tidak valid.</p>
+<ul>
+<li><p>Fungsi akan membuka file dan membaca isi file menggunakan <code class="docutils literal notranslate"><span class="pre">open()</span></code> dan <code class="docutils literal notranslate"><span class="pre">read()</span></code> jika format dokumen <code class="docutils literal notranslate"><span class="pre">.txt</span></code></p></li>
+<li><p>Fungsi akan membuka file dan membaca isi file menggunakan <code class="docutils literal notranslate"><span class="pre">PyPDF2</span></code> jika format dokumen <code class="docutils literal notranslate"><span class="pre">.pdf</span></code></p></li>
+</ul>
+</li>
+<li><p>Jika fungsi berhasil membaca dokumen, maka isi dokumen akan dijadikan sebagai output dari readDoc(name).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we are going to show an example of how the method is working</span>
+<span class="c1"># first let&#39;s take the document as an input</span>
+<span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please input a file name: &#39;</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You have asked for the document </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="c1"># now read the type of document</span>
+    <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.txt&#39;</span><span class="p">):</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.pdf&#39;</span><span class="p">):</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">choice</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="c1"># print(name)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+    <span class="c1"># Case 1: if it is a .txt file</span>
+        
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            
+    <span class="c1"># Case 2: if it is a .pdf file</span>
+    <span class="k">elif</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">pdfFileObj</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span>
+        <span class="n">pdfReader</span> <span class="o">=</span> <span class="n">PyPDF2</span><span class="o">.</span><span class="n">PdfFileReader</span><span class="p">(</span><span class="n">pdfFileObj</span><span class="p">)</span>
+        <span class="n">pageObj</span> <span class="o">=</span> <span class="n">pdfReader</span><span class="o">.</span><span class="n">getPage</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="n">pageObj</span><span class="o">.</span><span class="n">extractText</span><span class="p">()</span>
+        <span class="n">pdfFileObj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="c1"># Case 3: none of the format</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to load a valid file&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Returning an empty string&#39;</span><span class="p">)</span>
+        <span class="n">document</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">document</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-sentence">
+<h3>Split Sentence<a class="headerlink" href="#split-sentence" title="Permalink to this heading">#</a></h3>
+<p>Memecah teks dokumen menjadi kalimat-kalimat menggunakan method tokenize(). Jika fungsi berhasil memecah dokumen menjadi kalimat-kalimat, maka list kalimat tersebut akan dijadikan sebagai output dari fungsi tokenize(document).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">):</span>
+    <span class="c1"># We are tokenizing using the PunktSentenceTokenizer</span>
+    <span class="c1"># we call an instance of this class as sentence_tokenizer</span>
+    <span class="n">doc_tokenizer</span> <span class="o">=</span> <span class="n">PunktSentenceTokenizer</span><span class="p">()</span>
+    
+    <span class="c1"># tokenize() method: takes our document as input and returns a list of all the sentences in the document</span>
+    
+    <span class="c1"># sentences is a list containing each sentence of the document as an element</span>
+    <span class="n">sentences_list</span> <span class="o">=</span> <span class="n">doc_tokenizer</span><span class="o">.</span><span class="n">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sentences_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-document">
+<h3>Read Document<a class="headerlink" href="#read-document" title="Permalink to this heading">#</a></h3>
+<p>Langkah - langkah memproses dokumen antara lain :</p>
+<ul class="simple">
+<li><p>Membaca dokumen dari file story2.txt” menggunakan fungsi readDoc() dan menyimpannya dalam variabel document.</p></li>
+<li><p>Tokenisasi kalimat denganmembuat daftar semua kalimat dokumen. Dokumen hanya dalam format string.</p></li>
+<li><p>Jika ingin memproses dokumen, perlu menyimpannya dalam struktur data.</p></li>
+<li><p>Tokenisasi dokumen menjadi kata-kata juga dimungkinkan, tetapi kita akan melakukan tokenisasi dengan kalimat</p></li>
+<li><p>Karena ingin memilih kalimat yang paling relevan, perlu membuat token kalimat saja</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># reading a file and </span>
+<span class="c1"># printing the size of the file</span>
+<span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">StdinNotImplementedError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-11-3d2a36d056b4&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># reading a file and</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># printing the size of the file</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">document</span> <span class="o">=</span> <span class="n">readDoc</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of the file is:&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">document</span><span class="p">))</span>
+
+<span class="nn">&lt;ipython-input-9-4da83aee54d1&gt;</span> in <span class="ni">readDoc</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># first let&#39;s take the document as an input</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">def</span> <span class="nf">readDoc</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please input a file name: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You have asked for the document </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we want to tokenize the document for further processing</span>
+<span class="c1"># tokenizing the sentence means that we are creating a list of all the sentences of the document.</span>
+<span class="c1"># Need of tokenizing the document: Initially the document is in just a string format.</span>
+<span class="c1"># if we want to process the document, we need to store it in a data structure.</span>
+<span class="c1"># Tokenization of document into words is also possible, but we will go with the tokenizing with the sentences</span>
+<span class="c1"># Since we want to choose the most relevant sentences, we need to generate tokens of sentences only</span>
+<span class="n">sentences_list</span> <span class="o">=</span> <span class="n">tokenize</span><span class="p">(</span><span class="n">document</span><span class="p">)</span>
+
+<span class="c1"># let us print the size of memory used by the list sentences</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the list in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)))</span>
+
+<span class="c1"># the size of one of the element of the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the item 0 in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list in Bytes is: 88
+The size of the item 0 in Bytes is: 249
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let us see the data type of sentences_list</span>
+<span class="c1"># It will be list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let us analyse the elements of the sentences</span>
+<span class="c1"># len() method applies on the list and provides the number of elements in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the list &quot;sentences&quot; is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the list &quot;sentences&quot; is: 4
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="print-sentence">
+<h3>Print Sentence<a class="headerlink" href="#print-sentence" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the elements of the list</span>
+<span class="c1"># If the input document is long, which on realistically will be wrong, we would not like to print the entire document</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sentences_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An officer of the Central Reserve Police Force (CRPF) officer was killed in a gunfight with the Maoists in a dense forest in the insurgency-hit Sukma district of Chhattisgarh, police said on Saturday.
+The gunfight took place last night in Kistaram police station area when a team of CRPF&#39;s 212th battalion was out on a search-cum-area domination operation, Deputy Inspector General of Police (South Bastar Range) Sundarraj P told PTI.
+The deceased was a native of Madhya Pradesh.
+Security forces have launched a combing operation in the area, located around 500 km away from the state capital Raipur, he added.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-term-document-matrix-td-matrix">
+<h3>Generate Term-Document Matrix (TD Matrix)<a class="headerlink" href="#generate-term-document-matrix-td-matrix" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Metode <code class="docutils literal notranslate"><span class="pre">nx.draw()</span></code> digunakan untuk menggambar grafik yang dibuat</p></li>
+<li><p>Menggambar grafik untuk melanjutkan algoritma textrank</p></li>
+<li><p>nx_graph adalah grafik yang dikembangkan menggunakan pustaka networkx</p></li>
+<li><p>Setiap node mewakili sebuah kalimat</p></li>
+<li><p>Edges menyatakan bahwa mereka memiliki kesamaan kata</p></li>
+<li><p>Bobot edges adalah jumlah kata yang umum di kedua kalimat (node)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">cv_matrix</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv_demo</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
+<span class="n">text_demo</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ashish is good, you are bad&quot;</span><span class="p">,</span> <span class="s2">&quot;I am not bad&quot;</span><span class="p">]</span> 
+<span class="n">res_demo</span> <span class="o">=</span> <span class="n">cv_demo</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">text_demo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result demo array is </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res_demo</span><span class="o">.</span><span class="n">toarray</span><span class="p">()))</span>
+
+<span class="c1"># Result is 2-d matrix containing document text matrix</span>
+<span class="c1"># Notice that in the second row, there is 2.</span>
+<span class="c1"># also, bad is repeated twice in that sentence.</span>
+<span class="c1"># so we can infer that 2 is corresponding to the word &#39;bad&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Feature list: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cv_demo</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result demo array is [[0 1 1 1 1 1 0 1]
+ [1 0 0 1 0 0 1 0]]
+Feature list: [&#39;am&#39; &#39;are&#39; &#39;ashish&#39; &#39;bad&#39; &#39;good&#39; &#39;is&#39; &#39;not&#39; &#39;you&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The data type of bow matrix </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Shape of the matrix </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cv_matrix</span><span class="o">.</span><span class="n">get_shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Size of the matrix is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cv_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The data type of bow matrix &lt;class &#39;scipy.sparse._csr.csr_matrix&#39;&gt;
+Shape of the matrix &lt;bound method spmatrix.get_shape of &lt;4x70 sparse matrix of type &#39;&lt;class &#39;numpy.int64&#39;&gt;&#39;
+	with 85 stored elements in Compressed Sparse Row format&gt;&gt;
+Size of the matrix is: 48
+[&#39;212th&#39; &#39;500&#39; &#39;added&#39; &#39;an&#39; &#39;area&#39; &#39;around&#39; &#39;away&#39; &#39;bastar&#39; &#39;battalion&#39;
+ &#39;capital&#39; &#39;central&#39; &#39;chhattisgarh&#39; &#39;combing&#39; &#39;crpf&#39; &#39;cum&#39; &#39;deceased&#39;
+ &#39;dense&#39; &#39;deputy&#39; &#39;district&#39; &#39;domination&#39; &#39;force&#39; &#39;forces&#39; &#39;forest&#39; &#39;from&#39;
+ &#39;general&#39; &#39;gunfight&#39; &#39;have&#39; &#39;he&#39; &#39;hit&#39; &#39;in&#39; &#39;inspector&#39; &#39;insurgency&#39;
+ &#39;killed&#39; &#39;kistaram&#39; &#39;km&#39; &#39;last&#39; &#39;launched&#39; &#39;located&#39; &#39;madhya&#39; &#39;maoists&#39;
+ &#39;native&#39; &#39;night&#39; &#39;of&#39; &#39;officer&#39; &#39;on&#39; &#39;operation&#39; &#39;out&#39; &#39;place&#39; &#39;police&#39;
+ &#39;pradesh&#39; &#39;pti&#39; &#39;raipur&#39; &#39;range&#39; &#39;reserve&#39; &#39;said&#39; &#39;saturday&#39; &#39;search&#39;
+ &#39;security&#39; &#39;south&#39; &#39;state&#39; &#39;station&#39; &#39;sukma&#39; &#39;sundarraj&#39; &#39;team&#39; &#39;the&#39;
+ &#39;told&#39; &#39;took&#39; &#39;was&#39; &#39;when&#39; &#39;with&#39;]
+[[0 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0 1 0 1 0 1 0 1 0 0 1 0 0 1 3 0 1 1 0 0 0
+  0 0 0 1 0 0 2 2 1 0 0 0 2 0 0 0 0 1 1 1 0 0 0 0 0 1 0 0 3 0 0 1 0 1]
+ [1 0 0 0 2 0 0 1 1 0 0 0 0 1 1 0 0 1 0 1 0 0 0 0 1 1 0 0 0 1 1 0 0 1 0 1
+  0 0 0 0 0 1 2 0 1 1 1 1 2 0 1 0 1 0 0 0 1 0 1 0 1 0 1 1 1 1 1 1 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+  0 0 1 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0]
+ [0 1 1 0 1 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 1 1 0 1 0 0 0 0 1 0
+  1 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 2 0 0 0 0 0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tnormalized: document-term matrix normalized (value 0-1) according to the TF-IDF</span>
+<span class="c1"># TF(Term Frequency): the no. of times a term(a word here) appears in the current document(single sentence here)</span>
+<span class="c1"># IDF(Inverse Document Frequency): the no. of times a term(a word here) appears in the entire corpus</span>
+<span class="c1"># Corpus: set of all sentences</span>
+
+<span class="n">normal_matrix</span> <span class="o">=</span> <span class="n">TfidfTransformer</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">cv_matrix</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">normal_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.         0.         0.         0.17539606 0.         0.
+  0.         0.         0.         0.         0.17539606 0.17539606
+  0.         0.13828427 0.         0.         0.17539606 0.
+  0.17539606 0.         0.17539606 0.         0.17539606 0.
+  0.         0.13828427 0.         0.         0.17539606 0.3358591
+  0.         0.17539606 0.17539606 0.         0.         0.
+  0.         0.         0.         0.17539606 0.         0.
+  0.22390607 0.35079212 0.13828427 0.         0.         0.
+  0.27656854 0.         0.         0.         0.         0.17539606
+  0.17539606 0.17539606 0.         0.         0.         0.
+  0.         0.17539606 0.         0.         0.27458682 0.
+  0.         0.11195303 0.         0.17539606]
+ [0.17361558 0.         0.         0.         0.27376103 0.
+  0.         0.17361558 0.17361558 0.         0.         0.
+  0.         0.13688052 0.17361558 0.         0.         0.17361558
+  0.         0.17361558 0.         0.         0.         0.
+  0.17361558 0.13688052 0.         0.         0.         0.11081657
+  0.17361558 0.         0.         0.17361558 0.         0.17361558
+  0.         0.         0.         0.         0.         0.17361558
+  0.22163315 0.         0.13688052 0.13688052 0.17361558 0.17361558
+  0.27376103 0.         0.17361558 0.         0.17361558 0.
+  0.         0.         0.17361558 0.         0.17361558 0.
+  0.17361558 0.         0.17361558 0.17361558 0.09059981 0.17361558
+  0.17361558 0.11081657 0.17361558 0.        ]
+ [0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.44336682 0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.44336682 0.         0.44336682 0.
+  0.2829953  0.         0.         0.         0.         0.
+  0.         0.44336682 0.         0.         0.         0.
+  0.         0.         0.         0.         0.         0.
+  0.         0.         0.         0.         0.2313672  0.
+  0.         0.2829953  0.         0.        ]
+ [0.         0.23100252 0.23100252 0.         0.18212504 0.23100252
+  0.23100252 0.         0.         0.23100252 0.         0.
+  0.23100252 0.         0.         0.         0.         0.
+  0.         0.         0.         0.23100252 0.         0.23100252
+  0.         0.         0.23100252 0.23100252 0.         0.14744592
+  0.         0.         0.         0.         0.23100252 0.
+  0.23100252 0.23100252 0.         0.         0.         0.
+  0.         0.         0.         0.18212504 0.         0.
+  0.         0.         0.         0.23100252 0.         0.
+  0.         0.         0.         0.23100252 0.         0.23100252
+  0.         0.         0.         0.         0.24109339 0.
+  0.         0.         0.         0.        ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">toarray</span><span class="p">)</span>
+<span class="n">res_graph</span> <span class="o">=</span> <span class="n">normal_matrix</span> <span class="o">*</span> <span class="n">normal_matrix</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># plt.spy(res_graph)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method _cs_matrix.toarray of &lt;70x4 sparse matrix of type &#39;&lt;class &#39;numpy.float64&#39;&gt;&#39;
+	with 85 stored elements in Compressed Sparse Column format&gt;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># drawing a graph to proceed for the textrank algorithm</span>
+<span class="c1"># nx_graph is a graph developed using the networkx library</span>
+<span class="c1"># each node represents a sentence</span>
+<span class="c1"># an edge represents that they have words in common</span>
+<span class="c1"># the edge weight is the number of words that are common in both of the sentences(nodes)</span>
+<span class="c1"># nx.draw() method is used to draw the graph created</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
+
+<span class="n">nx_graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_scipy_sparse_array</span><span class="p">(</span><span class="n">res_graph</span><span class="p">)</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw_circular</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of edges </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">number_of_edges</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of vertices </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx_graph</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">()))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The memory used by the graph in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of edges 10
+Number of vertices 4
+</pre></div>
+</div>
+<img alt="_images/153def79a190b4b3ba8772118f3e2d3c20080d3ba6f150447a452d8b9e761174.png" src="_images/153def79a190b4b3ba8772118f3e2d3c20080d3ba6f150447a452d8b9e761174.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The memory used by the graph in Bytes is: 48
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="determine-rank">
+<h3>Determine Rank<a class="headerlink" href="#determine-rank" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>Tentukan rank untuk setiap kalimat menggunakan Textrank</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ranks is a dictionary with key=node(sentences) and value=textrank (the rank of each of the sentences)</span>
+<span class="n">ranks</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">nx_graph</span><span class="p">)</span>
+
+<span class="c1"># analyse the data type of ranks</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ranks</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size used by the dictionary in Bytes is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">ranks</span><span class="p">)))</span>
+
+<span class="c1"># print the dictionary</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ranks</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">ranks</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
+The size used by the dictionary in Bytes is: 232
+0 0.26514535598812305
+1 0.25870017964295355
+2 0.2401348797668423
+3 0.23601958460208095
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-important-sentences-and-generate-summary">
+<h3>Find Important Sentences and Generate Summary<a class="headerlink" href="#find-important-sentences-and-generate-summary" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># enumerate method: returns an enumerate object</span>
+<span class="c1"># Use of list Comprehensions</span>
+<span class="c1"># O/p: sentence_array is the sorted(descending order w.r.t. score value) 2-d array of ranks[sentence] and sentence </span>
+<span class="c1"># For example, if there are two sentences: S1 (with a score of S1 = s1) and S2 with score s2, with s2&gt;s1</span>
+<span class="c1"># then sentence_array is [[s2, S2], [s1, S1]]</span>
+<span class="n">sentence_array</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(((</span><span class="n">ranks</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sentences_list</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sentence_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># as sentence_array is in descending order wrt score value</span>
+<span class="c1"># fmax is the largest score value(the score of first element)</span>
+<span class="c1"># fmin is the smallest score value(the score of last element)</span>
+
+<span class="n">rank_max</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">rank_min</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the largest and smallest value of scores of the sentence</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_max</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rank_min</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.26514535598812305
+0.23601958460208095
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalization of the scores</span>
+<span class="c1"># so that it comes out in the range 0-1</span>
+<span class="c1"># fmax becomes 1</span>
+<span class="c1"># fmin becomes 0</span>
+<span class="c1"># store the normalized values in the list temp_array</span>
+
+<span class="n">temp_array</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># if all sentences have equal ranks, means they are all the same</span>
+<span class="c1"># taking any sentence will give the summary, say the first sentence</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">rank_max</span> <span class="o">-</span> <span class="n">rank_min</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">temp_array</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># If the sentence has different ranks</span>
+<span class="k">if</span> <span class="n">flag</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">)):</span>
+        <span class="n">temp_array</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">float</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">rank_max</span> <span class="o">-</span> <span class="n">rank_min</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculation of threshold:</span>
+<span class="c1"># We take the mean value of normalized scores</span>
+<span class="c1"># any sentence with the normalized score 0.2 more than the mean value is considered to be </span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separate out the sentences that satiasfy the criteria of having a score above the threshold</span>
+<span class="n">sentence_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">temp_array</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">temp_array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+                <span class="n">sentence_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sentence_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence_array</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="write-the-summary">
+<h3>Write the Summary<a class="headerlink" href="#write-the-summary" title="Permalink to this heading">#</a></h3>
+<blockquote>
+<div><p>Membuat ringkasan ke file baru</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Di dalam loop <code class="docutils literal notranslate"><span class="pre">for</span></code>, setiap kalimat dalam variabel sentence_list dicetak satu per satu menggunakan perintah <code class="docutils literal notranslate"><span class="pre">print(i)</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print(sentence_list)</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sentence_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+<span class="c1"># save the data in another file, names sum.txt</span>
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;final3.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;a+&#39;</span><span class="p">)</span>
+<span class="c1">#print(type(f))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An officer of the Central Reserve Police Force (CRPF) officer was killed in a gunfight with the Maoists in a dense forest in the insurgency-hit Sukma district of Chhattisgarh, police said on Saturday. The gunfight took place last night in Kistaram police station area when a team of CRPF&#39;s 212th battalion was out on a search-cum-area domination operation, Deputy Inspector General of Police (South Bastar Range) Sundarraj P told PTI.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function TextIOWrapper.close()&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">sentence_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An officer of the Central Reserve Police Force (CRPF) officer was killed in a gunfight with the Maoists in a dense forest in the insurgency-hit Sukma district of Chhattisgarh, police said on Saturday.
+The gunfight took place last night in Kistaram police station area when a team of CRPF&#39;s 212th battalion was out on a search-cum-area domination operation, Deputy Inspector General of Police (South Bastar Range) Sundarraj P told PTI.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="UTS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Text Classification - UTS</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#p-r-left-p-i-right-frac-1-d-n-d-cdot-sum-p-j-in-operatorname-in-left-p-i-right-frac-p-r-left-p-j-right-left-operatorname-out-left-p-j-right-right"><span class="math notranslate nohighlight">\(P R\left(p_i\right)=\frac{1-d}{N}+d \cdot \sum_{p_j \in \operatorname{in}\left(p_i\right)} \frac{P R\left(p_j\right)}{\left|\operatorname{out}\left(p_j\right)\right|}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-manual-pagerank">Hitung Manual Pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-pagerank">Hitung Pagerank</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-summarization">Text Summarization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-document-type">Define Document Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#split-sentence">Split Sentence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-document">Read Document</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#print-sentence">Print Sentence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-term-document-matrix-td-matrix">Generate Term-Document Matrix (TD Matrix)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-rank">Determine Rank</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#find-important-sentences-and-generate-summary">Find Important Sentences and Generate Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#write-the-summary">Write the Summary</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Diah Kamalia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
