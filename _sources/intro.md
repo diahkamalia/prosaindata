@@ -1,5 +1,5 @@
-# Diah Kamalia - 200411100061 🙌
-# **Proyek Sains Data**
+# Diah Kamalia - 200411100061
+# **Projek Sains Data**
 
 Sains Data merupakan multidisipliner ilmu yang terdiri dari matematika, statistika dan ilmu komputer. Beberapa sumber lainnya mengatakan juga bahwa artificial intellegence dan quantum juga bagian dari sains data. Tugas dari seorang data scientist adalah mengekstrak data dari sumber data seperti big data atau platform data untuk menghasilkan informasi atau insight dari pola yang terbentuk pada data, mengapa terbentuk, menggunakan metode apa dan apa yang harus dilakukan pada produk hasil akhirnya. 
 
@@ -8,3 +8,6 @@ Sains Data merupakan multidisipliner ilmu yang terdiri dari matematika, statisti
 - Diagnostic Analysis
 - Predictive Analysis
 - Prescriptive Analysis
+
+```{tableofcontents}
+```
